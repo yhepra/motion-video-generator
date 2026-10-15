@@ -5,10 +5,33 @@ import {
   AlokasiPromo,
   alokasiPromoSchema,
 } from "./compositions/AlokasiPromo";
+import {
+  AlokasiStory,
+  alokasiStorySchema,
+} from "./compositions/AlokasiStory";
 
 export const Root: React.FC = () => {
   return (
     <>
+      {/* Alokasi 18-second Video Story (VO Aligned, 540 frames @ 30fps) */}
+      <Composition
+        id="AlokasiStory"
+        component={AlokasiStory}
+        schema={alokasiStorySchema}
+        durationInFrames={540}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          brandDomain: "alokasi.id",
+          brandSlogan: "Kelola Keuangan Lebih Tenang.",
+          primaryColor: "#2563eb",
+          emeraldAccent: "#059669",
+          textColor: "#1e293b",
+          bgWhite: "#f9fafb",
+        }}
+      />
+
       {/* Alokasi AI Statement Scan Promo (Reels 9:16 - 10s @ 30fps) */}
       <Composition
         id="AlokasiPromo"

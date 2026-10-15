@@ -1,8 +1,10 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
@@ -96,23 +98,15 @@ export const AlokasiPromo: React.FC<AlokasiPromoProps> = ({
           opacity: interpolate(frame, [0, 20], [0, 1], { extrapolateRight: "clamp" }),
         }}
       >
-        <div
+        <Img
+          src={staticFile("images/alokasi-logo.png")}
           style={{
             width: 44,
             height: 44,
-            borderRadius: 14,
-            background: `linear-gradient(135deg, ${primaryColor}, ${accentBlue})`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#ffffff",
-            fontWeight: 800,
-            fontSize: 22,
+            borderRadius: 12,
             boxShadow: `0 8px 24px ${primaryColor}40`,
           }}
-        >
-          A
-        </div>
+        />
         <span
           style={{
             fontSize: 32,
@@ -496,24 +490,16 @@ export const AlokasiPromo: React.FC<AlokasiPromoProps> = ({
           }}
         >
           {/* Main Big Logo */}
-          <div
+          <Img
+            src={staticFile("images/alokasi-logo.png")}
             style={{
-              width: 120,
-              height: 120,
+              width: 140,
+              height: 140,
               borderRadius: 36,
-              background: `linear-gradient(135deg, ${primaryColor}, ${accentBlue})`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#ffffff",
-              fontWeight: 800,
-              fontSize: 64,
               boxShadow: `0 20px 50px ${primaryColor}45`,
               marginBottom: 36,
             }}
-          >
-            A
-          </div>
+          />
 
           <h2
             style={{
