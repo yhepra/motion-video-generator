@@ -24,17 +24,14 @@ export const alokasiPromoSchema = z.object({
 
 export type AlokasiPromoProps = z.infer<typeof alokasiPromoSchema>;
 
-export const AlokasiPromo = React.forwardRef<
-  HTMLDivElement,
-  AlokasiPromoProps
->(({
+export const AlokasiPromo: React.FC<AlokasiPromoProps> = ({
   brandName,
   tagline,
   primaryColor,
   accentBlue,
   lightBg,
   ctaText,
-}, ref) => {
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -53,9 +50,15 @@ export const AlokasiPromo = React.forwardRef<
   };
 
   return (
-    <AbsoluteFill
-      ref={ref}
+    <div
       style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: "100%",
+        height: "100%",
         backgroundColor: lightBg,
         fontFamily,
         color: "#0f172a",
@@ -576,6 +579,6 @@ export const AlokasiPromo = React.forwardRef<
           background: `linear-gradient(90deg, ${primaryColor}, ${accentBlue})`,
         }}
       />
-    </AbsoluteFill>
+    </div>
   );
 };
