@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Audio,
   Img,
   interpolate,
   spring,
@@ -20,6 +21,8 @@ export const alokasiStorySchema = z.object({
   emeraldAccent: z.string(),
   textColor: z.string(),
   bgWhite: z.string(),
+  audioVoiceover: z.string().optional(),
+  audioMusic: z.string().optional(),
 });
 
 export type AlokasiStoryProps = z.infer<typeof alokasiStorySchema>;
@@ -31,6 +34,8 @@ export const AlokasiStory: React.FC<AlokasiStoryProps> = ({
   emeraldAccent,
   textColor,
   bgWhite,
+  audioVoiceover,
+  audioMusic,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -517,6 +522,10 @@ export const AlokasiStory: React.FC<AlokasiStoryProps> = ({
           </div>
         </AbsoluteFill>
       )}
+
+      {/* Optional Audio Layers (Voiceover & Background Music) */}
+      {audioVoiceover && <Audio src={staticFile(audioVoiceover)} volume={1} />}
+      {audioMusic && <Audio src={staticFile(audioMusic)} volume={0.15} loop />}
 
       {/* Modern Bottom Progress Bar */}
       <div
