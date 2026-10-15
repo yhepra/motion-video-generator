@@ -1,0 +1,6 @@
+node_modules/
+dist/
+outputs/
+.remotion/
+*.mp4
+*.webm

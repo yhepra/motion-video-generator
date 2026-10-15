@@ -1,0 +1,11 @@
+{
+  "title": "Welcome to Motion Generator",
+  "subtitle": "Dibuat langsung via prompt & kode",
+  "backgroundColor": "#0f172a",
+  "textColor": "#38bdf8",
+  "accentColor": "#f43f5e",
+  "durationInFrames": 150,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920
+}
