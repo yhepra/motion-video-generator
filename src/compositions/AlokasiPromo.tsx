@@ -24,14 +24,17 @@ export const alokasiPromoSchema = z.object({
 
 export type AlokasiPromoProps = z.infer<typeof alokasiPromoSchema>;
 
-export const AlokasiPromo: React.FC<AlokasiPromoProps> = ({
+export const AlokasiPromo = React.forwardRef<
+  HTMLDivElement,
+  AlokasiPromoProps
+>(({
   brandName,
   tagline,
   primaryColor,
   accentBlue,
   lightBg,
   ctaText,
-}) => {
+}, ref) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -51,6 +54,7 @@ export const AlokasiPromo: React.FC<AlokasiPromoProps> = ({
 
   return (
     <AbsoluteFill
+      ref={ref}
       style={{
         backgroundColor: lightBg,
         fontFamily,

@@ -27,7 +27,10 @@ export const alokasiStorySchema = z.object({
 
 export type AlokasiStoryProps = z.infer<typeof alokasiStorySchema>;
 
-export const AlokasiStory: React.FC<AlokasiStoryProps> = ({
+export const AlokasiStory = React.forwardRef<
+  HTMLDivElement,
+  AlokasiStoryProps
+>(({
   brandDomain,
   brandSlogan,
   primaryColor,
@@ -36,7 +39,7 @@ export const AlokasiStory: React.FC<AlokasiStoryProps> = ({
   bgWhite,
   audioVoiceover,
   audioMusic,
-}) => {
+}, ref) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -55,6 +58,7 @@ export const AlokasiStory: React.FC<AlokasiStoryProps> = ({
 
   return (
     <AbsoluteFill
+      ref={ref}
       style={{
         backgroundColor: bgWhite,
         fontFamily,

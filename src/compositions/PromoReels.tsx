@@ -17,13 +17,16 @@ export const promoReelsSchema = z.object({
 
 export type PromoReelsProps = z.infer<typeof promoReelsSchema>;
 
-export const PromoReels: React.FC<PromoReelsProps> = ({
+export const PromoReels = React.forwardRef<
+  HTMLDivElement,
+  PromoReelsProps
+>(({
   title,
   subtitle,
   backgroundColor,
   textColor,
   accentColor,
-}) => {
+}, ref) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -47,6 +50,7 @@ export const PromoReels: React.FC<PromoReelsProps> = ({
 
   return (
     <div
+      ref={ref}
       style={{
         flex: 1,
         backgroundColor,
