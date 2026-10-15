@@ -5,14 +5,17 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { z } from "zod";
 
-export interface PromoReelsProps {
-  title: string;
-  subtitle: string;
-  backgroundColor: string;
-  textColor: string;
-  accentColor: string;
-}
+export const promoReelsSchema = z.object({
+  title: z.string(),
+  subtitle: z.string(),
+  backgroundColor: z.string(),
+  textColor: z.string(),
+  accentColor: z.string(),
+});
+
+export type PromoReelsProps = z.infer<typeof promoReelsSchema>;
 
 export const PromoReels: React.FC<PromoReelsProps> = ({
   title,
