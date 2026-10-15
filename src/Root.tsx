@@ -19,7 +19,7 @@ export const Root: React.FC = () => {
         component={AlokasiStory}
         schema={alokasiStorySchema}
         durationInFrames={540}
-        fps={30}
+        fps={60}
         width={1080}
         height={1920}
         defaultProps={{
@@ -29,6 +29,7 @@ export const Root: React.FC = () => {
           emeraldAccent: "#059669",
           textColor: "#1e293b",
           bgWhite: "#f9fafb",
+          audioVoiceover: "audio/alokasi-voiceover.mp3",
         }}
       />
 

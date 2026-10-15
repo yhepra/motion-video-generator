@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "remotion studio src/index.tsx",
     "render": "tsx src/scripts/render.ts",
+    "render:story": "remotion render src/index.tsx AlokasiStory outputs/alokasi-story.mp4",
+    "generate:audio": "node src/scripts/generate_voxcpm_remote.mjs",
     "build": "remotion render src/index.tsx PromoReels outputs/video.mp4"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
+    "@gradio/client": "^2.7.1",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "tsx": "^4.7.0",
