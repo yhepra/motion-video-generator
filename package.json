@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "remotion studio src/index.ts",
+    "dev": "remotion studio src/index.tsx",
     "render": "tsx src/scripts/render.ts",
-    "build": "remotion render src/index.ts PromoReels outputs/video.mp4"
+    "build": "remotion render src/index.tsx PromoReels outputs/video.mp4"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",

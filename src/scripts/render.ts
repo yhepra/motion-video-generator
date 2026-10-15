@@ -1,11 +1,11 @@
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import inputConfig from "../configs/video-input.json" with { type: "json" };
+import inputConfig from "../configs/video-input.json";
 
 async function main() {
   console.log("Menyiapkan bundle video...");
-  const entryPoint = path.resolve(process.cwd(), "src/index.ts");
+  const entryPoint = path.resolve(process.cwd(), "src/index.tsx");
   const bundled = await bundle({
     entryPoint,
   });

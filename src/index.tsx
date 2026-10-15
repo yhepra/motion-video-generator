@@ -1,7 +1,7 @@
 import { registerRoot, Composition } from "remotion";
 import React from "react";
-import { PromoReels } from "./compositions/PromoReels.js";
-import defaultInput from "./configs/video-input.json" with { type: "json" };
+import { PromoReels } from "./compositions/PromoReels";
+import defaultInput from "./configs/video-input.json";
 
 export const Root: React.FC = () => {
   return (
